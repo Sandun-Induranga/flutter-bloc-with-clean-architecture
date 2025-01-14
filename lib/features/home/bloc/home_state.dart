@@ -1,4 +1,4 @@
-import 'package:flutter_bloc_with_clean_architecture/features/home/data/theme_model.dart';
+import '../data/theme_model.dart';
 
 class HomeState {
   final ThemeModel themeModel;
