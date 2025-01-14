@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_with_clean_architecture/features/home/bloc/home_provider.dart';
 import 'package:flutter_bloc_with_clean_architecture/features/home/presentation/home_view.dart';
 
 class MainApp extends StatelessWidget {
@@ -6,12 +8,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
+    return MultiBlocProvider(
+      providers: [
+        HomeProvider(),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeView(),
       ),
-      home: const HomeView(),
     );
   }
 }

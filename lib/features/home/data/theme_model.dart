@@ -1,20 +1,19 @@
-class ThemeModel{
-  final String themeName;
-  final String themeData;
+class ThemeModel {
+  final bool isDarkMode;
 
-  ThemeModel({required this.themeName, required this.themeData});
+  ThemeModel({
+    required this.isDarkMode,
+  });
 
-  factory ThemeModel.fromJson(Map<String, dynamic> json){
+  factory ThemeModel.fromJson(Map<String, dynamic> json) {
     return ThemeModel(
-      themeName: json['themeName'],
-      themeData: json['themeData']
+      isDarkMode: json['isDarkMode'],
     );
   }
 
-  Map<String, dynamic> toJson(){
+  Map<String, dynamic> toJson() {
     return {
-      'themeName': themeName,
-      'themeData': themeData
+      'isDarkMode': isDarkMode,
     };
   }
 }
